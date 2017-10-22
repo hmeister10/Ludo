@@ -4,12 +4,16 @@
     <title>Ludo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="resources/css/style.css" rel="stylesheet">
   </head>
   <body>
     <h1>Ludo</h1>
 
-    <div id="init">
+    <div
+      id="init"
+      class='state'>
       <p>Pick number of players</p>
       <select>
         <option value="">select a value</option>
@@ -17,17 +21,33 @@
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <input type="button" name="start" value="start">
+      <input 
+        type="button"
+        name="start"
+        value="start"
+        onClick="changeState('game')">
     </div>
 
-    <div id="game">
-      
+    <div id="game" class='state hide'>
+        <input 
+        type="button"
+        name="game"
+        value="end"
+        onClick="changeState('end')">
     </div>
 
-    <div id="end">
-      
+    <div id="end" class='state hide'>
+        <input 
+        type="button"
+        name="end"
+        value="start again"
+        onClick="changeState('init')">
     </div>
 
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
     <script src="resources/js/bundle.js"></script>
   </body>
 </html>

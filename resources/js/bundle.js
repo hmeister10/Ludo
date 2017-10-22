@@ -73,6 +73,10 @@ const viewHandler = __webpack_require__(2);
 console.log('CORE:', core);
 console.log('viewHandler:', viewHandler);
 
+changeState = function(state) {
+  viewHandler.changeState(state);
+}
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
@@ -80,7 +84,9 @@ console.log('viewHandler:', viewHandler);
 
 
 
+
 module.exports = {
+
 
 }
 
@@ -88,8 +94,13 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports) {
 
+const changeState = function(state) {
+  $('.state').addClass('hide');
+  $('#'+state).removeClass('hide');
+};
+
 module.exports = {
-  
+ changeState
 }
 
 /***/ })
